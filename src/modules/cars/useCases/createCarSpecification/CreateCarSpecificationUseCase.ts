@@ -21,7 +21,6 @@ class CreateCarSpecificationUseCase {
     ) {}
 
     async execute({ car_id, specification_id }: IRequest): Promise<Car> {
-        console.log(specification_id);
         const carExists = await this.carsRepository.findById(car_id);
 
         if (!carExists) {
